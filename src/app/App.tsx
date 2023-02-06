@@ -1,21 +1,17 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AboutPage } from 'pages/AboutPage';
-import { MainPage } from 'pages/MainPage';
-import { Suspense } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import './styles/index.scss';
+import { Navbar } from 'widgets/Navbar';
 import { AppRouter } from './providers/router';
+import './styles/index.scss';
 
 const App = () => {
     const {theme, toggleTheme} = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
+            <Navbar />
+            <AppRouter />
             <button onClick={toggleTheme}>TOGGLE</button>
-            <Link to={'/'}>Главная</Link>
-            <Link to={'/about'}>О сайте</Link>
-            <AppRouter/>
         </div>
     );
 };
