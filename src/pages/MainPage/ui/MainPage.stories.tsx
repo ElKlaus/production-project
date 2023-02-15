@@ -10,8 +10,8 @@ export default {
         backgroundColor: { control: 'color' },
     },
     args: {
-      to: '/',
-    }
+        to: '/',
+    },
 } as ComponentMeta<typeof MainPage>;
 
 const Template: ComponentStory<typeof MainPage> = (args) => <MainPage {...(args as object)} />;

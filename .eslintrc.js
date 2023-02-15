@@ -41,6 +41,7 @@ module.exports = {
         ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'arrow-body-style': 'off',
+        'no-param-reassign': 'off',
 
     },
     globals: {

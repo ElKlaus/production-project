@@ -10,8 +10,8 @@ export default {
         backgroundColor: { control: 'color' },
     },
     args: {
-      to: '/',
-    }
+        to: '/',
+    },
 } as ComponentMeta<typeof NotFoundPage>;
 
 const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;

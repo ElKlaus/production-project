@@ -10,8 +10,8 @@ export default {
         backgroundColor: { control: 'color' },
     },
     args: {
-      to: '/',
-    }
+        to: '/',
+    },
 } as ComponentMeta<typeof ThemeSwitcher>;
 
 const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
