@@ -16,7 +16,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    const { t } = useTranslation('sidebar');// самодеятельность
+    const { t } = useTranslation('sidebar');
 
     return (
         <div
@@ -28,8 +28,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 type="button"
                 onClick={onToggle}
             >
-                {t('свернуть')}
-                {/* //самодеятельность */}
+                {t('Переключить')}
             </button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
