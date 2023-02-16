@@ -85,15 +85,15 @@
     "react-i18next": "^11.15.5",
     "react-router-dom": "^6.2.1"
   },
-  "loki": {   
+  "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "width": 1366,
         "height": 768
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "preset": "iPhone 7"
       }
     }
