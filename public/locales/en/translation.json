@@ -8,5 +8,7 @@
   "свернуть": "toggle",
   "Сокращение": "En",
   "Войти": "Enter",
-  "'Произошла непредвиденная ошибка'": "An unexpected error has occurred"
+  "'Произошла непредвиденная ошибка'": "An unexpected error has occurred",
+  "Инкремент": "Increment",
+  "Декремент": "Decrement"
 }

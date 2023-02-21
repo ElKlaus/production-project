@@ -42,12 +42,12 @@ module.exports = {
         ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'arrow-body-style': 'off', // My self
-        'no-param-reassign': 'off', // My self
         'react/self-closing-comp': 'off', // My self
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'no-param-reassign': 'off',
     },
     globals: {
         __IS_DEV__: true,
