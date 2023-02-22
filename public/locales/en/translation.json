@@ -8,6 +8,8 @@
   "свернуть": "toggle",
   "Сокращение": "En",
   "Войти": "Enter",
+  "Введите имя пользователя": "Enter username",
+  "Введите пароль": "Enter password",
   "'Произошла непредвиденная ошибка'": "An unexpected error has occurred",
   "Инкремент": "Increment",
   "Декремент": "Decrement"
