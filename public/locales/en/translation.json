@@ -15,5 +15,6 @@
   "Вы ввели неверное имя пользователя или пароль": "You entered an incorrect username or password",
   "'Произошла непредвиденная ошибка'": "An unexpected error has occurred",
   "Инкремент": "Increment",
-  "Декремент": "Decrement"
+  "Декремент": "Decrement",
+  "ПРОФИЛЬ": "PROFILE PAGE"
 }
