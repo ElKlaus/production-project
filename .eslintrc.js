@@ -29,7 +29,8 @@ module.exports = {
             [2, { extensions: ['.js', '.jsx', '.tsx', '.ts'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off', // при 'warn' падает проверка. Возможно проблема в энамах в файле src\shared\const\common.ts
+        '@typescript-eslint/no-unused-vars': 'warn', // вместо правила выше, ошибка уходит, предупреждения выводятся
         'react/require-default-props': 'off',
         'react/function-component-definition': 'off',
         'react/jsx-props-no-spreading': 'warn',
