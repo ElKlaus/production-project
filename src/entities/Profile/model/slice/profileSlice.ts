@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Profile, ProfileSchema } from '../types/profile';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
-import { Profile, ProfileShema } from '../types/profile';
 
-const initialState: ProfileShema = {
+const initialState: ProfileSchema = {
     readonly: true,
     isLoading: false,
     error: undefined,
@@ -23,7 +23,7 @@ export const profileSlice = createSlice({
                 state,
                 action: PayloadAction<Profile>,
             ) => {
-                state.isLoading = true;
+                state.isLoading = false;
                 state.data = action.payload;
             })
             .addCase(fetchProfileData.rejected, (state, action) => {

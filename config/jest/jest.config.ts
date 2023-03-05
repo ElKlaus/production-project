@@ -1,3 +1,8 @@
+/*
+ * For a detailed explanation regarding each configuration property and type check, visit:
+ * https://jestjs.io/docs/configuration
+ */
+
 import path from 'path';
 
 export default {
@@ -8,13 +13,8 @@ export default {
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
-        '/node_modules/',
+        '\\\\node_modules\\\\',
     ],
-    moduleDirectories: [
-        'node_modules',
-    ],
-
-    // An array of file extensions your modules use
     moduleFileExtensions: [
         'js',
         'jsx',
@@ -23,10 +23,14 @@ export default {
         'json',
         'node',
     ],
+    moduleDirectories: [
+        'node_modules',
+    ],
     modulePaths: [
         '<rootDir>src',
     ],
     testMatch: [
+        // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     rootDir: '../../',
@@ -79,6 +83,8 @@ export default {
     // maxWorkers: "50%",
 
     // An array of directory names to be searched recursively up from the requiring module's location
+
+    // An array of file extensions your modules use
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
@@ -147,7 +153,7 @@ export default {
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
     // testPathIgnorePatterns: [
-    //   "/node_modules/"
+    //   "\\\\node_modules\\\\"
     // ],
 
     // The regexp pattern or array of patterns that Jest uses to detect test files

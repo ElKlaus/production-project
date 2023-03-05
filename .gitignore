@@ -1,7 +1,6 @@
 /build
 node_modules
-prf
-notes.md
+.idea
 /storybook-static
 .loki/report.html
 .loki/report.json

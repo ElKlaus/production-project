@@ -1,16 +1,14 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { NotFoundPage } from './NotFoundPage';
 
 export default {
-    title: 'Pages/NotFoundPage',
+    title: 'pages/NotFoundPage',
     component: NotFoundPage,
     argTypes: {
         backgroundColor: { control: 'color' },
-    },
-    args: {
-        to: '/',
     },
 } as ComponentMeta<typeof NotFoundPage>;
 

@@ -1,17 +1,17 @@
 import { Country, Currency } from 'shared/const/common';
 
 export interface Profile {
-    first: string,
-    lastname: string,
-    age: 34,
+    first: string;
+    lastname: string;
+    age: 22,
     currency: Currency,
-    country: Country,
+    country: Country;
     city: string,
-    username: string,
-    avatar: string
+    username: string;
+    avatar: string;
 }
 
-export interface ProfileShema {
+export interface ProfileSchema {
     data?: Profile;
     isLoading: boolean;
     error?: string;
