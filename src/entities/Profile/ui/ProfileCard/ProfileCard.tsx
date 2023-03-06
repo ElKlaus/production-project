@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
@@ -31,17 +31,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
         );
     }
 
+    if (error) {
+        return (
+            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+                <Text
+                    theme={TextTheme.ERROR}
+                    title={t('Произошла ошибка при загрузке профиля')}
+                    text={t('Попробуйте обновить страницу')}
+                    align={TextAlign.CENTER}
+                />
+            </div>
+        );
+    }
+
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
-            <div className={cls.header}>
-                <Text title={t('Профиль')} />
-                <Button
-                    className={cls.editBtn}
-                    theme={ButtonTheme.OUTLINE}
-                >
-                    {t('Редактировать')}
-                </Button>
-            </div>
             <div className={cls.data}>
                 <Input
                     value={data?.first}
