@@ -19,12 +19,8 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Auth form",
   "Вы ввели неверный логин или пароль": "Uncorrect username or password",
-  "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
-  "Попробуйте обновить страницу": "Try refreshing the page",
-  "Сохранить": "Save",
-  "Ваше имя": "Your first name",
-  "Ваша фамилия": "Your last name",
-  "Ваш возраст": "Your age",
-  "Ваш город": "Your city",
-  "Выйти": "Exit"
+  "Выйти": "Logout",
+  "Укажите валюту": "Choose currency",
+  "Укажите страну": "Choose country",
+  "Профиль": "Profile"
 }

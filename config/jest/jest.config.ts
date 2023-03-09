@@ -175,10 +175,10 @@ export default {
     // transform: undefined,
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-    // Решение проблемы с импортом axios(SyntaxError: Cannot use import statement outside a module): https://monosnap.com/file/inafS36E4CZR6pPwUNsIxXoaD3pya5
-    transformIgnorePatterns: [
-        '/node_modules/(?!(axios)/)',
-    ],
+    // transformIgnorePatterns: [
+    //   "\\\\node_modules\\\\",
+    //   "\\.pnp\\.[^\\\\]+$"
+    // ],
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,

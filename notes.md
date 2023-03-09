@@ -1,4 +1,2 @@
-
-
 useCallback();
 селекторы в Redux
