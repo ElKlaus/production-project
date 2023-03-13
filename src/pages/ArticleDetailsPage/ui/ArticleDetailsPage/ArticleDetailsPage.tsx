@@ -1,3 +1,4 @@
+import { ArticleDetails } from 'entities/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -13,7 +14,7 @@ export const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     return (
         <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-            {t('Детали статьи')}
+            <ArticleDetails />
         </div>
     );
 };
