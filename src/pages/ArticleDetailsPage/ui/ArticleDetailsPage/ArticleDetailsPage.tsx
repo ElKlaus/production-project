@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { memo } from 'react';
@@ -27,8 +28,29 @@ export const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     return (
         <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
             <ArticleDetails id={id} />
-            <Text title={t('Комментарии')} />
-            <CommentList />
+            <Text className={cls.commentTitle} title={t('Комментарии')} />
+            <CommentList comments={[
+                {
+                    id: '1',
+                    text: 'comment 1',
+                    user: {
+                        id: '1',
+                        username: 'Kirov',
+                        avatar:
+                            'https://avatars.dzeninfra.ru/get-zen_doc/44972/pub_5a59e08d5816695e0efbe7b9_5a59e4f19b403c1a4920cd7a/scale_1200',
+                    },
+                },
+                {
+                    id: '2',
+                    text: 'comment 2',
+                    user: {
+                        id: '1',
+                        username: 'Kirov',
+                        avatar: 'https://avatars.dzeninfra.ru/get-zen_doc/44972/pub_5a59e08d5816695e0efbe7b9_5a59e4f19b403c1a4920cd7a/scale_1200',
+                    },
+                },
+            ]}
+            />
         </div>
     );
 };

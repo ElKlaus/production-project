@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
+import { Comment } from '../../model/types/Comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 import cls from './CommentList.module.scss';
 
@@ -19,7 +20,7 @@ export const CommentList = memo((props: CommentListProps) => {
         <div className={classNames(cls.CommentList, {}, [className])}>
             {comments?.length
                 ? comments.map((comment) => (
-                    <CommentCard comment={comment} />
+                    <CommentCard className={cls.comment} comment={comment} />
                 ))
                 : <Text text={t('Комментарии отсутствуют')} />}
         </div>
