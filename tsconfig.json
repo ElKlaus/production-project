@@ -39,6 +39,9 @@
       "module": "CommonJS"
     }
   },
+  // Решило проблему с ошибкой: TS1261: Already included file name '/mnt/f/domains1/production-project/src/entities/Comment/model/types/comment.ts'
+  // differs from file name '/mnt/f/domains1/production-project/src/entities/Comment/model/types/Comment.ts' only in casing.
+  "forceConsistentCasingInFileNames": true,
   "include": [
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
