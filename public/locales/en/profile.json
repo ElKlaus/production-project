@@ -12,9 +12,9 @@
   "Имя пользователя": "Username",
   "Введите имя пользователя": "Input username",
   "Введите ссылку на аватар": "Input avatar link",
-  "Серверная ошибка при сохранении": "Server error on save",
+  "Серверная ошибка при сохранении": "Server error when saving",
   "Некорректный регион": "Invalid region",
-  "Данные не указаны": "Data not specified",
-  "Имя и фамилия обязательны": "First and last names are required",
+  "Имя и фамилия обязательны": "First and last name are required",
+  "Данные не указаны": "Data is not specified",
   "Некорректный возраст": "Incorrect age"
 }

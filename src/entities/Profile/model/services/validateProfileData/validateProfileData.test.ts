@@ -1,15 +1,15 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from 'entities/Profile';
 import { validateProfileData } from './validateProfileData';
 
 const data = {
     username: 'admin',
-    age: 43,
-    country: Country.Belarus,
-    lastname: 'Kirov',
-    first: 'Sergey',
-    city: 'Saratov',
+    age: 22,
+    country: Country.Ukraine,
+    lastname: 'ulbi tv',
+    first: 'asd',
+    city: 'asf',
     currency: Currency.USD,
 };
 

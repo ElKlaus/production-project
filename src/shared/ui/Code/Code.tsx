@@ -1,7 +1,7 @@
-import { memo, useCallback } from 'react';
-import CopyIcon from 'shared/assets/icons/copy-20-20.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '../Button/Button';
+import { memo, useCallback } from 'react';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import CopyIcon from 'shared/assets/icons/copy-20-20.svg';
 import cls from './Code.module.scss';
 
 interface CodeProps {
@@ -11,6 +11,7 @@ interface CodeProps {
 
 export const Code = memo((props: CodeProps) => {
     const { className, text } = props;
+
     const onCopy = useCallback(() => {
         navigator.clipboard.writeText(text);
     }, [text]);

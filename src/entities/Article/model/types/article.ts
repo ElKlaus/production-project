@@ -37,9 +37,9 @@ export enum ArticleType {
 export interface Article {
     id: string;
     title: string;
-    subtitle: string,
+    subtitle: string;
     img: string;
-    views: 1022;
+    views: number;
     createdAt: string;
     type: ArticleType[];
     blocks: ArticleBlock[];

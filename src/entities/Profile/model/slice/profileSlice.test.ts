@@ -1,20 +1,20 @@
+import {
+    profileActions, profileReducer, ProfileSchema, updateProfileData, ValidateProfileError,
+} from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import {
-    ProfileSchema, profileActions, profileReducer, updateProfileData, ValidateProfileError,
-} from 'entities/Profile';
+
+const data = {
+    username: 'admin',
+    age: 22,
+    country: Country.Ukraine,
+    lastname: 'ulbi tv',
+    first: 'asd',
+    city: 'asf',
+    currency: Currency.USD,
+};
 
 describe('profileSlice.test', () => {
-    const data = {
-        username: 'admin',
-        age: 43,
-        country: Country.Belarus,
-        lastname: 'Kirov',
-        first: 'Sergey',
-        city: 'Saratov',
-        currency: Currency.USD,
-    };
-
     test('test set readonly', () => {
         const state: DeepPartial<ProfileSchema> = { readonly: false };
         expect(profileReducer(
@@ -24,7 +24,7 @@ describe('profileSlice.test', () => {
     });
 
     test('test cancel edit', () => {
-        const state: DeepPartial<ProfileSchema> = { data, form: { username: ' ' } };
+        const state: DeepPartial<ProfileSchema> = { data, form: { username: '' } };
 
         expect(profileReducer(
             state as ProfileSchema,
@@ -38,7 +38,7 @@ describe('profileSlice.test', () => {
     });
 
     test('test update profile', () => {
-        const state: DeepPartial<ProfileSchema> = { form: { username: ' ' } };
+        const state: DeepPartial<ProfileSchema> = { form: { username: '123' } };
 
         expect(profileReducer(
             state as ProfileSchema,
@@ -50,7 +50,7 @@ describe('profileSlice.test', () => {
         });
     });
 
-    test('test update profile sevice pending', () => {
+    test('test update profile service pending', () => {
         const state: DeepPartial<ProfileSchema> = {
             isLoading: false,
             validateErrors: [ValidateProfileError.SERVER_ERROR],
@@ -65,10 +65,9 @@ describe('profileSlice.test', () => {
         });
     });
 
-    test('test update profile sevice fulfiled', () => {
+    test('test update profile service fullfiled', () => {
         const state: DeepPartial<ProfileSchema> = {
             isLoading: true,
-            validateErrors: [ValidateProfileError.SERVER_ERROR],
         };
 
         expect(profileReducer(
@@ -78,6 +77,7 @@ describe('profileSlice.test', () => {
             isLoading: false,
             validateErrors: undefined,
             readonly: true,
+            validateError: undefined,
             form: data,
             data,
         });
