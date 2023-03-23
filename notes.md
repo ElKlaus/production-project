@@ -1,8 +1,29 @@
+23.03.2023
+    Сделать сниппеты на async thunc
+
+22.03.2023
+    сделать сниппет:
+        import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+        import { ArticleList } from './ArticleList';
+
+        export default {
+            title: 'entities/ArticleList',
+            component: ArticleList,
+            argTypes: {
+                backgroundColor: { control: 'color' },
+            },
+        } as ComponentMeta<typeof ArticleList>;
+
+        const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+
+        export const Normal = Template.bind({});
+        Normal.args = {};
+
 16.03.2023
     Поправить автофик scss линтера -
     Настроить плагин шаблонизации -
     Настроить плагин добавления переводов -
-    
 
 15.03.2023
     50 Страница статьи. Блочная структура. Компонент Code. Копирование 46:16.
