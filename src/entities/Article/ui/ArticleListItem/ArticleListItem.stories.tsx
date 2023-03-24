@@ -1,7 +1,8 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Article, ArticleView } from '../../model/types/article';
 
 import { ArticleListItem } from './ArticleListItem';
+import { Article, ArticleView } from '../../model/types/article';
 
 export default {
     title: 'entities/Article/ArticleListItem',
@@ -15,7 +16,7 @@ const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListI
 
 const article = {
     id: '1',
-    title: 'Javascript news asdfsdfdafdfa asdfasdfdasfds',
+    title: 'Javascript news asfasjf asfjkask f',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,

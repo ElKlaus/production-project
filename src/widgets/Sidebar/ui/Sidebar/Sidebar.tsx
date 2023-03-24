@@ -15,19 +15,19 @@ interface SidebarProps {
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
-    const SidebarItemsList = useSelector(getSidebarItems);
+    const sidebarItemsList = useSelector(getSidebarItems);
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
 
-    const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+    const itemsList = useMemo(() => sidebarItemsList.map((item) => (
         <SidebarItem
             item={item}
             collapsed={collapsed}
             key={item.path}
         />
-    )), [SidebarItemsList, collapsed]);
+    )), [collapsed, sidebarItemsList]);
 
     return (
         <div

@@ -1,18 +1,19 @@
-/* eslint-disable max-len */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import {
-    Article, ArticleList, ArticleView, ArticleViewSelector,
-} from 'entities/Article';
+import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
-import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
+import {
+    getArticlesPageError,
+    getArticlesPageIsLoading,
+    getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 
 interface ArticlesPageProps {
     className?: string;
@@ -36,8 +37,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(fetchArticlesList);
         dispatch(articlesPageActions.initState());
+        dispatch(fetchArticlesList({
+            page: 1,
+        }));
     });
 
     return (

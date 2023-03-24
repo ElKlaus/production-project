@@ -1,7 +1,8 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Article, ArticleView } from '../../model/types/article';
 
 import { ArticleList } from './ArticleList';
+import { Article, ArticleView } from '../../model/types/article';
 
 export default {
     title: 'entities/Article/ArticleList',
@@ -15,7 +16,7 @@ const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...
 
 const article = {
     id: '1',
-    title: 'Javascript news asdfsdfdafdfa asdfasdfdasfds',
+    title: 'Javascript news asfasjf asfjkask f',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
@@ -93,17 +94,17 @@ const article = {
     ],
 } as Article;
 
-export const isLoadingBig = Template.bind({});
-isLoadingBig.args = {
-    isLoading: true,
+export const LoadingBig = Template.bind({});
+LoadingBig.args = {
     articles: [],
+    isLoading: true,
     view: ArticleView.BIG,
 };
 
-export const isLoadingSmall = Template.bind({});
-isLoadingSmall.args = {
-    isLoading: true,
+export const LoadingSmall = Template.bind({});
+LoadingSmall.args = {
     articles: [],
+    isLoading: true,
     view: ArticleView.SMALL,
 };
 

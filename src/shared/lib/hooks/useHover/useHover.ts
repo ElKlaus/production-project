@@ -1,11 +1,11 @@
 import { useCallback, useMemo, useState } from 'react';
 
-interface useHoverBind {
+interface UseHoverBind {
     onMouseEnter: () => void;
     onMouseLeave: () => void;
 }
 
-type UseHoverResult = [boolean, UseHoverResult]
+type UseHoverResult = [boolean, UseHoverBind]
 
 export const useHover = () => {
     const [isHover, setIsHover] = useState(false);
@@ -23,5 +23,6 @@ export const useHover = () => {
         {
             onMouseEnter,
             onMouseLeave,
-        }], [isHover, onMouseEnter, onMouseLeave]);
+        },
+    ], [isHover, onMouseEnter, onMouseLeave]);
 };

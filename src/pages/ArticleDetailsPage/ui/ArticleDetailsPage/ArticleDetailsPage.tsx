@@ -11,9 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import {
-    addCommentForArticle,
-} from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -37,6 +35,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const navigate = useNavigate();
+
     const onBackToList = useCallback(() => {
         navigate(RoutePath.articles);
     }, [navigate]);
