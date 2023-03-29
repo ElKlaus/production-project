@@ -1,3 +1,6 @@
+29.03.2023
+    Сделать тесты для initArticlesPage по примеру тестов для fetchNextArticlesPage
+
 23.03.2023
     Сделать сниппеты на async thunc
 
