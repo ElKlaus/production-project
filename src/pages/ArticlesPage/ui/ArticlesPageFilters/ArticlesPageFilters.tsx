@@ -10,7 +10,11 @@ import { Select } from 'shared/ui/Select/Select';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import { SortOrder } from 'shared/types';
-import { getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
+import {
+    getArticlesPageOrder,
+    getArticlesPageSort,
+    getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
 
@@ -23,6 +27,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const view = useSelector(getArticlesPageView);
+    const sort = useSelector(getArticlesPageSort);
+    const order = useSelector(getArticlesPageOrder);
 
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
@@ -33,17 +39,17 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     }, [dispatch]);
 
     const onChangeOrder = useCallback((newOrder: SortOrder) => {
-        dispatch(articlesPageActions.setView(newOrder));
+        dispatch(articlesPageActions.setOrder(newOrder));
     }, [dispatch]);
 
     return (
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
             <div className={cls.sortWrapper}>
                 <ArticleSortSelector
-                    order={}
-                    sort={}
-                    onChangeOrder={}
-                    onChangeSort={}
+                    order={order}
+                    sort={sort}
+                    onChangeOrder={onChangeOrder}
+                    onChangeSort={onChangeSort}
                 />
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
             </div>
