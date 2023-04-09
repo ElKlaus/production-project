@@ -3,3 +3,4 @@ export {
 } from './ui/ArticleDetailsPage/ArticleDetailsPage.async';
 
 export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
+export { articleDetailsRecommendationsSchema } from './model/types/articleDetailsRecommendationsSchema';
