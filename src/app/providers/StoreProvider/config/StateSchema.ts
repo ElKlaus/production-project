@@ -1,20 +1,23 @@
+import { CounterSchema } from 'entities/Counter';
+import { UserSchema } from 'entities/User';
+import { LoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { AxiosInstance } from 'axios';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { CounterSchema } from 'entities/Counter';
+import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entities/Profile';
-import { UserSchema } from 'entities/User';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { LoginSchema } from 'features/AuthByUsername';
-import { UISchema } from 'features/UI';
+import { AxiosInstance } from 'axios';
+import { To } from 'history';
+import { NavigateOptions } from 'react-router';
+import { ArticleDetailsSchema } from 'entities/Article';
 import {
     ArticleDetailsCommentsSchema,
-    articleDetailsRecommendationsSchema,
+    ArticleDetailsPageSchema,
+    ArticleDetailsRecommendationsSchema,
 } from 'pages/ArticleDetailsPage';
+import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { CombinedState } from 'redux';
+import { UISchema } from 'features/UI';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -25,10 +28,9 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
-    articleDetailsComments?: ArticleDetailsCommentsSchema;
-    articleDetailsRecommendations?: articleDetailsRecommendationsSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -39,7 +41,6 @@ export interface ReducerManager {
     reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
-
     // true - вмонтирован, false - демонтирован
     getMountedReducers: () => MountedReducers;
 }
