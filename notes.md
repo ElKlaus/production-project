@@ -1,3 +1,8 @@
+11.04.2023
+    �🔗  Linked to elklaus/production-project-server (created .vercel and added it to .gitignore)
+    �🔍  Inspect: https://vercel.com/elklaus/production-project-server/DQyjodgeFjcPJZPvs56Ln6WmkmBp [5
+    ✅  Production: https://production-project-server-ivory.vercel.app [16s]
+
 30.03.2023
     Приведение типов, this, прототипное наследование, события, взаимдойствия с DOM
     Различные варианты объединений, что было до join, where, having, group by
