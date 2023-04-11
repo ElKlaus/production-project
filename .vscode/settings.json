@@ -2,16 +2,5 @@
     "i18n-ally.localesPaths": [
         "public/locales",
         "src/shared/config/i18n"
-    ],
-    "i18n-ally.keystyle": "flat",
-    "i18n-ally.extract.ignoredByFiles": {
-        "src\\pages\\ProfilePage\\ui\\ProfilePage.tsx": [
-            "Серверная ошибка при сохранении",
-            "Серверная ошибка при сохранении",
-            "Некорректный регион",
-            "Данные не указаны",
-            "Имя и фамилия обязательны",
-            "Некорректный возраст"
-        ]
-    }
+    ]
 }
