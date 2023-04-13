@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from 'shared/ui/Text/Text';
+import { AutoSizer, List } from 'react-virtualized';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
@@ -50,11 +51,29 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.length > 0
-                ? articles.map(renderArticle)
-                : null}
-            {isLoading && getSkeletons(view)}
-        </div>
+        <AutoSizer disableHeight>
+            {({ width, height }) => (
+                <List
+                    ref="List"
+                    className={styles.List}
+                    height={listHeight}
+                    overscanRowCount={overscanRowCount}
+                    noRowsRenderer={this._noRowsRenderer}
+                    rowCount={rowCount}
+                    rowHeight={
+                        useDynamicRowHeight ? this._getRowHeight : listRowHeight
+                    }
+                    rowRenderer={this._rowRenderer}
+                    scrollToIndex={scrollToIndex}
+                    width={width}
+                />
+            )}
+        </AutoSizer>
+        // <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        //     {articles.length > 0
+        //         ? articles.map(renderArticle)
+        //         : null}
+        //     {isLoading && getSkeletons(view)}
+        // </div>
     );
 });
