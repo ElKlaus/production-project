@@ -13,6 +13,17 @@ const justifyClasses: Record<FlexJustify, string> = {
     between: cls.justifyBetween,
 };
 
+const alignClasses: Record<FlexAlign, string> = {
+    start: cls.alignStart,
+    center: cls.alignCenter,
+    end: cls.alignEnd,
+};
+
+const directionClasses: Record<FlexDirection, string> = {
+    row: cls.jdirectionRow,
+    column: cls.directionColumn,
+};
+
 interface FlexProps {
     className?: string;
     children: ReactNode;
@@ -30,8 +41,15 @@ export const Flex = (props: FlexProps) => {
         direction = 'row',
     } = props;
 
+    const classes = [
+        className,
+        justifyClasses[justify],
+        alignClasses[align],
+        directionClasses[direction],
+    ];
+
     return (
-        <div className={classNames(cls.Flex, {}, [className])}>
+        <div className={classNames(cls.Flex, {}, classes)}>
             {children}
         </div>
     );
