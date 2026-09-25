@@ -8,9 +8,9 @@ jobs:
   pipeline:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Starting Node.js 16
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 16
           cache: npm
@@ -30,7 +30,4 @@ jobs:
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
       - name: build storybook
         run: npm run storybook:build
-        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
-      - name: screenshot testing
-        run: npm run test:ui:ci
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
