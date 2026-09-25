@@ -6,33 +6,31 @@ on:
     branches: [ master ]
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 17.x ]
-
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - name: Starting Node.js 16
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16
+          cache: npm
       - name: install modules
-        run: npm install
+        id: install
+        run: npm ci
       - name: build production project
         run: npm run build:prod
-        if: always()
       - name: linting typescript
         run: npm run lint:ts
-        if: always()
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
       - name: linting css
         run: npm run lint:scss
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
       - name: unit testing
-        if: always()
         run: npm run test:unit
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
       - name: build storybook
         run: npm run storybook:build
-        if: always()
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
       - name: screenshot testing
         run: npm run test:ui:ci
-        if: always()
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
